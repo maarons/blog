@@ -12,10 +12,10 @@ theme/static/css/_pygments.scss:
 	./theme/static/css/pygments_css.py
 
 theme/static/css/LinLibertine_R.woff:
-	wget "http://linuxlibertine.sourceforge.net/fonts/LinLibertine_R.woff" -O theme/static/css/LinLibertine_R.woff
+	wget --tries=5 "http://linuxlibertine.sourceforge.net/fonts/LinLibertine_R.woff" -O theme/static/css/LinLibertine_R.woff
 
 theme/static/css/LinLibertine_RB.woff:
-	wget "http://linuxlibertine.sourceforge.net/fonts/LinLibertine_RB.woff" -O theme/static/css/LinLibertine_RB.woff
+	wget --tries=5 "http://linuxlibertine.sourceforge.net/fonts/LinLibertine_RB.woff" -O theme/static/css/LinLibertine_RB.woff
 
 server: prepare utils/nginx.conf
 	pelican -s pelican_conf_dev.py
