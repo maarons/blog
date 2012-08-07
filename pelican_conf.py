@@ -7,7 +7,7 @@ SITENAME = u"Marek Sapota’s blog"
 SITEURL = "http://blog.marek.sapota.org"
 RELATIVE_URLS = False
 
-ARTICLE_PERMALINK_STRUCTURE = "/%Y/%m/%d/"
+ARTICLE_PERMALINK_STRUCTURE = "article/%Y/%m/%d/"
 DEFAULT_DATE_FORMAT = "%m/%d/%Y %H:%M"
 FALLBACK_ON_FS_DATE = False
 PATH = "src/"
