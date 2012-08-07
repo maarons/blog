@@ -1,0 +1,143 @@
+@font-face {
+    font-family: Linux Libertine;
+    src: url("LinLibertine_R.woff");
+}
+@font-face {
+    font-family: Linux Libertine;
+    font-weight: bold;
+    src: url("LinLibertine_RB.woff");
+}
+
+@mixin transition($property, $duration) {
+    -moz-transition-property: $property;
+    -webkit-transition-property: $property;
+    -o-transition-property: $property;
+    transition-property: $property;
+
+    -moz-transition-duration: $duration;
+    -webkit-transition-duration: $duration;
+    -o-transition-duration: $duration;
+    transition-duration: $duration;
+}
+
+@mixin gradient-background($gradient) {
+    background: -moz-linear-gradient($gradient);
+    background: -webkit-linear-gradient($gradient);
+    background: -o-linear-gradient($gradient);
+    background: linear-gradient($gradient);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Linux Libertine, serif;
+    font-weight: normal;
+}
+
+html {
+    /* Always show the scroll bar so the page doesn't jump sideways when it
+     * appears/disappears. */
+    overflow-y: scroll;
+}
+
+body {
+    font-family: sans-serif;
+    width: 50em;
+    margin: 0.5em auto;
+}
+
+#banner {
+    font-family: Linux Libertine, serif;
+    font-weight: bold;
+    font-size: 2.5em;
+    margin: 0.7em 0 0.5em;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+nav {
+    background-color: black;
+    padding: 1em 0;
+    border-radius: 0.5em;
+
+    a {
+        color: white;
+        text-decoration: none;
+        padding: 1em;
+        @include gradient-background((top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)));
+        background-color: black;
+        @include transition(background-color, 0.5s);
+
+        &:first-child {
+            border-radius: 0.5em 0 0 0.5em;
+        }
+
+        &:hover {
+            background-color: white;
+        }
+
+        &.active {
+            @include gradient-background((top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)));
+            color: black;
+        }
+    }
+}
+
+.title-block {
+    float: right;
+}
+
+article {
+    clear: both;
+
+    .title {
+        margin-bottom: 0;
+        a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    }
+
+    .info {
+        float: right;
+        font-size: 0.8em;
+        margin-bottom: 1em;
+    }
+
+    .summary {
+        margin-left: 1em;
+
+        .readmore {
+            font-size: 0.8em;
+        }
+    }
+}
+
+footer {
+    clear: both;
+    font-size: 0.8em;
+}
+
+.article-social {
+    height: 24px;
+}
+
+.social {
+    float: left;
+}
+
+.post-social {
+    clear: left;
+}
+
+/* Code blocks styling. */
+
+.codehilite {
+    font-size: 0.8em;
+    margin-left: 2em;
+}
+
+@import "pygments"

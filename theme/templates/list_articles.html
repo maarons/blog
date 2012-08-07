@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="title-block">
+{% block title %}
+{% endblock %}
+</h1>
+
+{% for article in articles_page.object_list %}
+  <article>
+    <h1 class="title"><a href="{{ SITEURL }}/{{ article.url|replace(" ", "%20") }}">{{ article.title }}</a></h1>
+    <hr/>
+    {% include "article_social.html" %}
+    {% include "article_info.html" %}
+    <div class="summary">
+      {{ article.summary }}
+      <a class="readmore" href="{{ SITEURL }}/{{ article.url|replace(" ", "%20") }}">Read more</a>
+    </div>
+  </article>
+{% endfor %}
+
+{% include "pagination.html" %}
+
+{% endblock %}
+
+{# vim: filetype=jinja sw=2 sts=2 :
+#}

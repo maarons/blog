@@ -1,0 +1,16 @@
+<div class="info">
+  <div>Published on {{ article.locale_date }}</div>
+  <div>By <a href="{{ SITEURL }}/author/{{ article.author|replace(" ", "%20") }}.html">{{ article.author }}</a></div>
+  <div>In <a href="{{ SITEURL }}/category/{{ article.category|replace(" ", "%20") }}.html">{{ article.category }}</a></div>
+  {% if article.tags %}
+    <div>
+      Tags:
+      {% for tag in article.tags %}
+        <a href="{{ SITEURL }}/tag/{{ tag|replace(" ", "%20") }}.html">{{ tag }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+{# vim: filetype=jinja sw=2 sts=2 :
+#}

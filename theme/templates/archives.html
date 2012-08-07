@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+{{ SITENAME }} — archives
+{% endblock %}
+
+{% block content %}
+
+{% if dates %}
+  <ul>
+    {% for article in dates %}
+      <li>{{ article.locale_date }} — <a href="{{ SITEURL }}/{{ article.url|replace(" ", "%20") }}">{{ article.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% endblock %}
+
+{# vim: filetype=jinja sw=2 sts=2 :
+#}

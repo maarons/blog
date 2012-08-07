@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta property="fb:app_id" content="346427288776988"/>
+    <title>{% block page_title %}{{ SITENAME }}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" type="text/css" />
+
+    {% if FEED %}
+      <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="Atom feed" />
+    {% endif %}
+    {% if FEED_RSS %}
+      <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="RSS feed" />
+    {% endif %}
+
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <h1 id="banner"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+      <nav>
+        <!-- Use comments, so there are no white space characters between
+        entries.
+        {% if DISPLAY_PAGES_ON_MENU %}
+          {% for p in PAGES %}
+            --><a {% if p == page %}class="active"{% endif %} href="{{ SITEURL }}/pages/{{ p.url|replace(" ", "%20") }}">{{ p.title }}</a><!--
+          {% endfor %}
+        {% endif %}
+        {% for c, _ in categories %}
+          If article isn't defined we are displaying a category page.
+          --><a {% if c == category and not article %}class="active"{% endif %} href="{{ SITEURL }}/category/{{ c|replace(" ", "%20") }}.html">{{ c }}</a><!--
+        {% endfor %}
+        -->
+      </nav>
+    </header>
+
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <footer>
+      <hr/>
+      Copyright © 2012 Marek Sapota</br>
+      Except where otherwise noted, all content on this website is licensed
+      under the<br/>
+      <a href="http://creativecommons.org/licenses/by-sa/3.0/">
+      Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+    </footer>
+
+    {% include "fb.html" %}
+    {% include "google+.html" %}
+    {% include "twitter.html" %}
+  </body>
+</html>
+
+{# vim: filetype=jinja sw=2 sts=2 :
+#}

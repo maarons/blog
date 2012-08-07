@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+{{ SITENAME }} — {{ page.title }}
+{% endblock %}
+
+{% block content %}
+
+<article>
+  <h1 class="title"><a href="{{ SITEURL }}/pages/{{ page.url|replace(" ", "%20") }}">{{ page.title }}</a></h1>
+  <hr/>
+  <div class="content">
+    {{ page.content }}
+  </div>
+</article>
+
+{% endblock %}
+
+{# vim: filetype=jinja sw=2 sts=2 :
+#}

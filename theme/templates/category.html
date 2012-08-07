@@ -1,0 +1,23 @@
+{% extends "list_articles.html" %}
+
+{% block page_title %}
+{{ SITENAME }} — {{ category }} category
+{% endblock %}
+
+{% block head %}
+
+{% if CATEGORY_FEED %}
+  <link href="{{ SITEURL }}/{{ CATEGORY_FEED % category }}" type="application/atom+xml" rel="alternate" title="{{ category }} category Atom feed" />
+{% endif %}
+{% if CATEGORY_FEED_RSS %}
+  <link href="{{ SITEURL }}/{{ CATEGORY_FEED_RSS % category }}" type="application/rss+xml" rel="alternate" title="{{ category }} category RSS feed" />
+{% endif %}
+
+{% endblock %}
+
+{% block title %}
+You are browsing posts in “{{ category }}” category.
+{% endblock %}
+
+{# vim: filetype=jinja sw=2 sts=2 :
+#}

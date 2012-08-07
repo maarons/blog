@@ -1,0 +1,24 @@
+<div class="pagination">
+  {% if articles_page.has_other_pages() %}
+    {% if articles_page.has_previous() %}
+      {% if articles_page.previous_page_number() == 1 %}
+        <a href="{{ SITEURL }}/{{ page_name|replace(" ", "%20") }}.html">«</a>
+      {% else %}
+        <a href="{{ SITEURL }}/{{ page_name|replace(" ", "%20") }}{{ articles_page.previous_page_number() }}.html">«</a>
+      {% endif %}
+    {% else %}
+      «
+    {% endif %}
+
+    Page {{ articles_page.number }}/{{ articles_paginator.num_pages }}
+
+    {% if articles_page.has_next() %}
+      <a href="{{ SITEURL }}/{{ page_name|replace(" ", "%20") }}{{ articles_page.next_page_number() }}.html">»</a>
+    {% else %}
+      »
+    {% endif %}
+  {% endif %}
+</div>
+
+{# vim: filetype=jinja sw=2 sts=2 :
+#}

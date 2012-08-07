@@ -1,0 +1,23 @@
+{% extends "list_articles.html" %}
+
+{% block page_title %}
+{{ SITENAME }} — {{ tag }} tag
+{% endblock %}
+
+{% block head %}
+
+{% if TAG_FEED %}
+  <link href="{{ SITEURL }}/{{ TAG_FEED % tag }}" type="application/atom+xml" rel="alternate" title="{{ tag }} tag Atom feed" />
+{% endif %}
+{% if TAG_FEED_RSS %}
+  <link href="{{ SITEURL }}/{{ TAG_FEED_RSS % tag }}" type="application/rss+xml" rel="alternate" title="{{ tag }} tag RSS feed" />
+{% endif %}
+
+{% endblock %}
+
+{% block title %}
+You are browsing posts tagged with “{{ tag }}”.
+{% endblock %}
+
+{# vim: filetype=jinja sw=2 sts=2 :
+#}

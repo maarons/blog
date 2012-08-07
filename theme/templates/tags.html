@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+{{ SITENAME }} — tags
+{% endblock %}
+
+{% block content %}
+
+<h2>Tags:</h1>
+
+{% if tags %}
+  <ul>
+    {% for t, _ in tags %}
+      <li><a href="{{ SITEURL }}/tag/{{ t|replace(" ", "%20") }}.html">{{ t }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% endblock %}
+
+{# vim: filetype=jinja sw=2 sts=2 :
+#}
