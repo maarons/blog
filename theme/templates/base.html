@@ -29,8 +29,8 @@
           {% endfor %}
         {% endif %}
         {% for c, _ in categories %}
-          If article isn't defined we are displaying a category page.
-          --><a {% if c == category and not article %}class="active"{% endif %} href="{{ SITEURL }}/category/{{ c|replace(" ", "%20") }}.html">{{ c }}</a><!--
+          Make category active only on category pages, not individual article pages.
+          --><a {% if c == category and not article %}class="active"{% endif %} href="{{ SITEURL }}/category/{{ c|replace(" ", "%20") }}.html">{{ c.title() }}</a><!--
         {% endfor %}
         -->
       </nav>
