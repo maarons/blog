@@ -6,4 +6,4 @@ sys.path.insert(1, abspath("."))
 
 from pelican_conf import *
 
-SITEURL = "http://localhost.42foo.com:8000"
+SITEURL = "http://localhost.maarons.org:8000"
