@@ -9,7 +9,7 @@ theme/static/css/main.css: theme/static/css/_pygments.scss theme/static/css/main
 	sass theme/static/css/main.scss:theme/static/css/main.css
 
 theme/static/css/_pygments.scss:
-	./theme/static/css/pygments_css.py
+	pygmentize -S default -f html -a .codehilite > theme/static/css/_pygments.scss
 
 theme/static/css/LinLibertine_R.woff:
 	wget --tries=5 "http://linuxlibertine.sourceforge.net/fonts/LinLibertine_R.woff" -O theme/static/css/LinLibertine_R.woff
