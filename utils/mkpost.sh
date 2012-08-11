@@ -5,6 +5,7 @@ TITLE=$2
 if [ -z "$1" -o -z "$2" ]; then
     echo "Usage:"
     echo "mkpost.sh [category] [title]"
+    exit 1
 fi
 
 NAME=`echo -n $TITLE | sed -e "s/ /-/g" | awk '{print tolower($0)}'`
