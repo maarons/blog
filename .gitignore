@@ -2,6 +2,7 @@ theme/static/css/_pygments.scss
 theme/static/css/main.css
 .sass-cache/
 theme/static/css/LinLibertine_*.woff
+theme/static/css/html5shiv.js
 output/
 utils/nginx.conf
 *.py[co]
