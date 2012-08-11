@@ -9,7 +9,7 @@ if [ -z "$1" -o -z "$2" ]; then
 fi
 
 NAME=`echo -n $TITLE | sed -e "s/ /-/g" | awk '{print tolower($0)}'`
-TIME=`date --utc '+%Y-%d-%m %H:%M'`
+TIME=`date --utc '+%Y-%m-%d %H:%M'`
 DATE=`echo ${TIME%% *}`
 POST=src/$CATEGORY/$DATE-$NAME.md
 
