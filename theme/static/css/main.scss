@@ -32,55 +32,22 @@ h1, h2, h3, h4, h5 {
     font-weight: normal;
 }
 
-html {
-    /* Always show the scroll bar so the page doesn't jump sideways when it
-     * appears/disappears. */
-    overflow-y: scroll;
-}
-
 body {
     font-family: sans-serif;
-    width: 50em;
-    margin: 0.5em auto;
+}
+
+footer {
+    clear: both;
+    font-size: 0.8em;
 }
 
 #banner {
     font-family: Linux Libertine, serif;
     font-weight: bold;
-    font-size: 2.5em;
-    margin: 0.7em 0 0.5em;
 
     a {
         text-decoration: none;
         color: black;
-    }
-}
-
-nav {
-    background-color: black;
-    padding: 1em 0;
-    border-radius: 0.5em;
-
-    a {
-        color: white;
-        text-decoration: none;
-        padding: 1em;
-        @include gradient-background((top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)));
-        background-color: black;
-        @include transition(background-color, 0.5s);
-
-        &:first-child {
-            border-radius: 0.5em 0 0 0.5em;
-        }
-
-        &:hover {
-            background-color: white;
-        }
-
-        &.active {
-            @include gradient-background((top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)));
-            color: black;
-        }
     }
 }
 
@@ -120,9 +87,13 @@ article {
     }
 }
 
-footer {
-    clear: both;
-    font-size: 0.8em;
+/* Move content or summary below info on small screens. */
+@media (max-width: 50em) {
+    article {
+        .summary, .content {
+            clear: both;
+        }
+    }
 }
 
 .article-social {
@@ -135,6 +106,86 @@ footer {
 
 .post-social {
     clear: left;
+}
+
+/* Layout will render differently for big and small screens. */
+
+/* Big screens - desktops, laptops, etc. */
+@media (min-width: 50em) {
+    html {
+        overflow-y: scroll;
+    }
+
+    body {
+        margin: 0.5em auto;
+        width: 50em;
+    }
+
+    #banner {
+        font-size: 2.5em;
+        margin: 0.7em 0 0.5em;
+    }
+
+    nav {
+        background-color: black;
+        border-radius: 0.5em;
+        padding: 1em 0;
+
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 1em;
+            @include gradient-background((top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)));
+            background-color: black;
+            @include transition(background-color, 0.5s);
+
+            &:first-child {
+                border-radius: 0.5em 0 0 0.5em;
+            }
+
+            &:hover {
+                background-color: white;
+            }
+
+            &.active {
+                @include gradient-background((top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)));
+                color: black;
+            }
+        }
+    }
+}
+
+/* Small screens - phones, etc. */
+@media (max-width: 50em) {
+    nav a {
+        display: block;
+        padding: 0.5em 0;
+        @include gradient-background((top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)));
+        @include transition(background-color, 0.5s);
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        border-bottom: 0.2em solid black;
+
+        &:first-child {
+            border-top-left-radius: 0.5em;
+            border-top-right-radius: 0.5em;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 0.5em;
+            border-bottom-right-radius: 0.5em;
+            border-bottom: none;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        &.active {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
 }
 
 /* Code blocks styling. */
