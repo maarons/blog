@@ -1,18 +1,19 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8"/>
-    <meta property="fb:app_id" content="346427288776988"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height">
+    <meta property="fb:app_id" content="346427288776988">
     <title>{% block page_title %}{{ SITENAME }}{% endblock %}</title>
 
     <link rel="icon" href="{{ SITEURL }}/theme/images/favicon.png" type="image/png">
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" type="text/css">
 
     {% if FEED %}
-      <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="Atom feed" />
+      <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="Atom feed">
     {% endif %}
     {% if FEED_RSS %}
-      <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="RSS feed" />
+      <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="RSS feed">
     {% endif %}
 
     <!--[if lt IE 9]>
