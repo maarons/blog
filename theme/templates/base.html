@@ -21,10 +21,38 @@
       <script src="{{ SITEURL }}/theme/css/html5shiv.js"></script>
     <![endif]-->
 
+    <!-- Google+ -->
+    <script type="text/javascript">
+      window.___gcfg = {
+        lang: 'en-GB'
+      };
+    </script>
+
+    <script async="async" src="https://apis.google.com/js/plusone.js"></script>
+    <!-- End of Google+ -->
+    <!-- Facebook -->
+    <script type="text/javascript">
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: "346427288776988",
+          xfbml: true
+        });
+      }
+    </script>
+
+    <script async="async" src="https://connect.facebook.net/en_GB/all.js"></script>
+    <!-- End of Facebook -->
+    <!-- Twitter -->
+    <script async="async" src="https://platform.twitter.com/widgets.js"></script>
+    <!-- End of Twitter -->
+
     {% block head %}
     {% endblock %}
   </head>
   <body>
+    <!-- Facebook SDK will put stuff in here. -->
+    <div id="fb-root"></div>
+
     <header>
       <h1 id="banner"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
       <nav>
@@ -56,10 +84,6 @@
       <a href="http://creativecommons.org/licenses/by-sa/3.0/">
       Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
     </footer>
-
-    {% include "fb.html" %}
-    {% include "google+.html" %}
-    {% include "twitter.html" %}
   </body>
 </html>
 
