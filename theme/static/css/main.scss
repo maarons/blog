@@ -39,6 +39,7 @@ footer {
     font-family: Crimson Text, serif;
     font-weight: 600;
     font-style: italic;
+    margin: 0.3em 0;
 
     a {
         text-decoration: none;
@@ -119,7 +120,6 @@ article {
 
     #banner {
         font-size: 3em;
-        margin: 0.3em 0;
     }
 
     nav {
@@ -155,34 +155,43 @@ article {
 
 /* Small screens - phones, etc. */
 @media (max-width: 50em) {
-    nav a {
-        display: block;
-        padding: 0.5em 0;
-        @include gradient-background((top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5)));
-        background-color: black;
-        @include transition(background-color, 0.5s);
-        text-align: center;
-        color: white;
-        text-decoration: none;
-        border-bottom: 0.2em solid black;
+    #banner {
+        font-size: 2.5em;
+    }
 
-        &:first-child {
-            border-top-left-radius: 0.5em;
-            border-top-right-radius: 0.5em;
-        }
+    nav {
+        font-family: Open Sans, sans-serif;
+        font-weight: 600;
 
-        &:last-child {
-            border-bottom-left-radius: 0.5em;
-            border-bottom-right-radius: 0.5em;
-            border-bottom: none;
-        }
+        a {
+            display: block;
+            padding: 0.5em 0;
+            @include gradient-background((top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5)));
+            background-color: black;
+            @include transition(background-color, 0.5s);
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            border-bottom: 0.2em solid black;
 
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
+            &:first-child {
+                border-top-left-radius: 0.5em;
+                border-top-right-radius: 0.5em;
+            }
 
-        &.active {
-            background-color: rgba(0, 0, 0, 0.8);
+            &:last-child {
+                border-bottom-left-radius: 0.5em;
+                border-bottom-right-radius: 0.5em;
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            &.active {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
         }
     }
 }
