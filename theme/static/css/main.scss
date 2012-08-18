@@ -1,50 +1,7 @@
-@mixin transition($property, $duration) {
-    -moz-transition-property: $property;
-    -webkit-transition-property: $property;
-    -o-transition-property: $property;
-    transition-property: $property;
-
-    -moz-transition-duration: $duration;
-    -webkit-transition-duration: $duration;
-    -o-transition-duration: $duration;
-    transition-duration: $duration;
-}
-
-@mixin gradient-background($gradient) {
-    background: -moz-linear-gradient($gradient);
-    background: -webkit-linear-gradient($gradient);
-    background: -o-linear-gradient($gradient);
-    background: linear-gradient($gradient);
-}
-
-h1, h2, h3, h4, h5 {
-    font-family: serif;
-    font-weight: normal;
-}
+@import "common";
 
 blockquote {
     font-size: 0.9em;
-}
-
-body {
-    font-family: sans-serif;
-}
-
-footer {
-    clear: both;
-    font-size: 0.8em;
-}
-
-#banner {
-    font-family: Crimson Text, serif;
-    font-weight: 600;
-    font-style: italic;
-    margin: 0.3em 0;
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
 }
 
 .title-block {
@@ -84,15 +41,6 @@ article {
     }
 }
 
-/* Move content or summary below info on small screens. */
-@media (max-width: 50em) {
-    article {
-        .summary, .content {
-            clear: both;
-        }
-    }
-}
-
 .article-social {
     height: 24px;
 }
@@ -105,93 +53,11 @@ article {
     clear: left;
 }
 
-/* Layout will render differently for big and small screens. */
-
-/* Big screens - desktops, laptops, etc. */
-@media (min-width: 50em) {
-    html {
-        overflow-y: scroll;
-    }
-
-    body {
-        margin: 0.5em auto;
-        width: 50em;
-    }
-
-    #banner {
-        font-size: 3em;
-    }
-
-    nav {
-        background-color: black;
-        border-radius: 0.5em;
-        padding: 1em 0;
-        font-family: Open Sans, sans-serif;
-        font-weight: 600;
-
-        a {
-            color: white;
-            text-decoration: none;
-            padding: 1em;
-            @include gradient-background((top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)));
-            background-color: black;
-            @include transition(background-color, 0.5s);
-
-            &:first-child {
-                border-radius: 0.5em 0 0 0.5em;
-            }
-
-            &:hover {
-                background-color: white;
-            }
-
-            &.active {
-                @include gradient-background((top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)));
-                color: black;
-            }
-        }
-    }
-}
-
-/* Small screens - phones, etc. */
+/* Move content or summary below info on small screens. */
 @media (max-width: 50em) {
-    #banner {
-        font-size: 2.5em;
-    }
-
-    nav {
-        font-family: Open Sans, sans-serif;
-        font-weight: 600;
-
-        a {
-            display: block;
-            padding: 0.5em 0;
-            @include gradient-background((top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5)));
-            background-color: black;
-            @include transition(background-color, 0.5s);
-            text-align: center;
-            color: white;
-            text-decoration: none;
-            border-bottom: 0.2em solid black;
-
-            &:first-child {
-                border-top-left-radius: 0.5em;
-                border-top-right-radius: 0.5em;
-            }
-
-            &:last-child {
-                border-bottom-left-radius: 0.5em;
-                border-bottom-right-radius: 0.5em;
-                border-bottom: none;
-            }
-
-            &:hover {
-                background-color: rgba(0, 0, 0, 0.8);
-            }
-
-            &.active {
-                background-color: rgba(0, 0, 0, 0.8);
-            }
+    article {
+        .summary, .content {
+            clear: both;
         }
     }
 }
@@ -203,4 +69,4 @@ article {
     margin-left: 2em;
 }
 
-@import "pygments"
+@import "pygments";
