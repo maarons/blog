@@ -5,7 +5,7 @@ all: prepare
 
 prepare: theme/static/css/main.css theme/static/css/html5shiv.js
 
-theme/static/css/main.css: theme/static/css/_pygments.scss theme/static/css/main.scss
+theme/static/css/main.css: theme/static/css/_pygments.scss theme/static/css/main.scss theme/static/css/_common.scss
 	sass theme/static/css/main.scss:theme/static/css/main.css
 
 theme/static/css/_pygments.scss:
