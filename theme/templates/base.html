@@ -7,7 +7,7 @@
     <title>{% block page_title %}{{ SITENAME }}{% endblock %}</title>
 
     <link rel="icon" href="{{ SITEURL }}/theme/images/favicon.png" type="image/png">
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Sans+Mono|Crimson+Text:400,600,600italic|Open+Sans:600' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Sans+Mono|Crimson+Text:400,600,600italic|Open+Sans:600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" type="text/css">
 
     {% if FEED %}
@@ -21,10 +21,19 @@
       <script src="{{ SITEURL }}/theme/css/html5shiv.js"></script>
     <![endif]-->
 
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      _gaq = [];
+      _gaq.push(["_setAccount", "UA-34266410-1"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+
+    <script async="async" src="http://www.google-analytics.com/ga.js"></script>
+    <!-- End of Google Analytics -->
     <!-- Google+ -->
     <script type="text/javascript">
       window.___gcfg = {
-        lang: 'en-GB'
+        lang: "en-GB"
       };
     </script>
 
