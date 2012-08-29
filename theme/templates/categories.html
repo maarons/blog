@@ -11,7 +11,7 @@
 {% if categories %}
   <ul>
     {% for c, _ in categories %}
-      <li><a href="{{ SITEURL }}/category/{{ c|replace(" ", "%20") }}.html">{{ c }}</a></li>
+      <li><a href="{{ SITEURL }}/{{ c.url|replace(" ", "%20") }}">{{ c }}</a></li>
     {% endfor %}
   </ul>
 {% endif %}

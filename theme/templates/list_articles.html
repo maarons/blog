@@ -14,7 +14,7 @@
     {% include "article_social.html" %}
     {% include "article_info.html" %}
     <div class="summary">
-      {{ article.summary }}
+      {{ article.summary|replace("...", "…") }}
       <a class="readmore" href="{{ SITEURL }}/{{ article.url|replace(" ", "%20") }}">Read more</a>
     </div>
   </article>

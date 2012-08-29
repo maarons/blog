@@ -10,11 +10,11 @@
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Sans+Mono|Crimson+Text:400,600,600italic|Open+Sans:600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" type="text/css">
 
-    {% if FEED %}
-      <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="Atom feed">
+    {% if FEED_ATOM %}
+      <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="Atom feed">
     {% endif %}
     {% if FEED_RSS %}
-      <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="RSS feed">
+      <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="RSS feed">
     {% endif %}
 
     <!--[if lt IE 9]>
@@ -69,12 +69,11 @@
         entries.
         {% if DISPLAY_PAGES_ON_MENU %}
           {% for p in PAGES %}
-            --><a {% if p == page %}class="active"{% endif %} href="{{ SITEURL }}/pages/{{ p.url|replace(" ", "%20") }}">{{ p.title }}</a><!--
+            --><a {% if p == page %}class="active"{% endif %} href="{{ SITEURL }}/{{ p.url|replace(" ", "%20") }}">{{ p.title }}</a><!--
           {% endfor %}
         {% endif %}
         {% for c, _ in categories %}
-          Make category active only on category pages, not individual article pages.
-          --><a {% if c == category and not article %}class="active"{% endif %} href="{{ SITEURL }}/category/{{ c|replace(" ", "%20") }}.html">{{ c.title() }}</a><!--
+          --><a {% if c == category %}class="active"{% endif %} href="{{ SITEURL }}/{{ c.url|replace(" ", "%20") }}">{{ c }}</a><!--
         {% endfor %}
         -->
       </nav>
@@ -91,7 +90,7 @@
       Except where otherwise noted, all content on this website is licensed
       under the<br/>
       <a href="http://creativecommons.org/licenses/by-sa/3.0/">
-      Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+      Creative Commons Attribution‐ShareAlike 3.0 Unported License</a>.
     </footer>
   </body>
 </html>

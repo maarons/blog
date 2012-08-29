@@ -11,7 +11,7 @@
 {% if tags %}
   <ul>
     {% for t, _ in tags %}
-      <li><a href="{{ SITEURL }}/tag/{{ t|replace(" ", "%20") }}.html">{{ t }}</a></li>
+      <li><a href="{{ SITEURL }}/{{ t.url|replace(" ", "%20") }}">{{ t }}</a></li>
     {% endfor %}
   </ul>
 {% endif %}

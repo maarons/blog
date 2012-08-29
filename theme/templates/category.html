@@ -6,11 +6,11 @@
 
 {% block head %}
 
-{% if CATEGORY_FEED %}
-  <link href="{{ SITEURL }}/{{ CATEGORY_FEED % category }}" type="application/atom+xml" rel="alternate" title="{{ category }} category Atom feed" />
+{% if CATEGORY_FEED_ATOM %}
+  <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM % category }}" type="application/atom+xml" rel="alternate" title="{{ category }} category Atom feed" />
 {% endif %}
 {% if CATEGORY_FEED_RSS %}
-  <link href="{{ SITEURL }}/{{ CATEGORY_FEED_RSS % category }}" type="application/rss+xml" rel="alternate" title="{{ category }} category RSS feed" />
+  <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS % category }}" type="application/rss+xml" rel="alternate" title="{{ category }} category RSS feed" />
 {% endif %}
 
 {% endblock %}

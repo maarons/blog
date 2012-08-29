@@ -6,11 +6,11 @@
 
 {% block head %}
 
-{% if TAG_FEED %}
-  <link href="{{ SITEURL }}/{{ TAG_FEED % tag }}" type="application/atom+xml" rel="alternate" title="{{ tag }} tag Atom feed" />
+{% if TAG_FEED_ATOM %}
+  <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM % tag }}" type="application/atom+xml" rel="alternate" title="{{ tag }} tag Atom feed" />
 {% endif %}
 {% if TAG_FEED_RSS %}
-  <link href="{{ SITEURL }}/{{ TAG_FEED_RSS % tag }}" type="application/rss+xml" rel="alternate" title="{{ tag }} tag RSS feed" />
+  <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS % tag }}" type="application/rss+xml" rel="alternate" title="{{ tag }} tag RSS feed" />
 {% endif %}
 
 {% endblock %}

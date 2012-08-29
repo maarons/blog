@@ -1,6 +1,6 @@
 Title: Web browsers and cache revalidation
 Date: 2012-08-17 14:15
-Tags: software web caching
+Tags: software, web, caching
 
 Browser caching is essential if you want your web page to load quickly.  [Google
 Developers][GD] has a good article showing a basic caching set-up.  If that
