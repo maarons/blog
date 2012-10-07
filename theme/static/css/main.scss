@@ -70,8 +70,18 @@ article {
 
 .codehilite {
     font-size: 0.8em;
-    margin-left: 2em;
+    margin: 0.5em 0 0.5em 2em;
     font-family: Droid Sans Mono, monospace;
+    padding: 0.5em;
+
+    pre {
+        margin: 0;
+        overflow-x: auto;
+    }
+}
+
+code {
+    background-color: #f8f8f8;
 }
 
 @import "pygments";
