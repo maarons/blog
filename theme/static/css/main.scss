@@ -68,11 +68,12 @@ article {
 
 /* Code blocks styling. */
 
-.codehilite {
+div.codehilite {
     font-size: 0.8em;
     margin: 0.5em 0 0.5em 2em;
     font-family: Droid Sans Mono, monospace;
     padding: 0.5em;
+    background-color: #ddd;
 
     pre {
         margin: 0;
@@ -81,7 +82,7 @@ article {
 }
 
 code {
-    background-color: #f8f8f8;
+    background-color: #ddd;
 }
 
 @import "pygments";
