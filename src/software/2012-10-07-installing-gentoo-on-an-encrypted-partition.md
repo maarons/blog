@@ -112,6 +112,9 @@ number and partition identifiers):
 WARNING: At the time of writing genkernel doesn’t support UUID matching for
 `*_keydev`, you’ll need [this patch][uuid-patch] to make it work.
 
+UPDATE: This was merged into genkernel 3.4.45 — you don’t need to do anything
+extra to get the cool UUID matching.
+
 Now run:
 
     grub2-mkconfig -o /boot/grub2/grub.cfg
