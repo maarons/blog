@@ -1,7 +1,12 @@
 .PHONY: all prepare server clean
 
-all: prepare
+all: generate
+
+generate: prepare
 	pelican -s pelican_conf.py
+
+generate_dev: prepare
+	pelican -s pelican_conf_dev.py
 
 prepare: theme/static/css/main.css theme/static/css/html5shiv.js
 
@@ -14,8 +19,7 @@ theme/static/css/_pygments.scss:
 theme/static/css/html5shiv.js:
 	wget --tries=5 "https://raw.github.com/aFarkas/html5shiv/master/dist/html5shiv.js" -O theme/static/css/html5shiv.js
 
-server: prepare utils/nginx.conf
-	pelican -s pelican_conf_dev.py
+server: generate_dev utils/nginx.conf
 	nginx -c "`pwd`/utils/nginx.conf"
 
 utils/nginx.conf: utils/nginx.conf.template
