@@ -121,7 +121,7 @@ Now run:
 
 And install Grub with:
 
-    grub2-install /dev/sda
+    grub2-install /dev/FLASHDRIVE
 
 You should be able to boot now=)
 
