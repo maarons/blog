@@ -59,7 +59,7 @@ machine.  This is what you have to do to prepare the remote machine:
 
 * Put this in `~/.ssh/authorized_keys`:
 
-    command="/home/rsnap/validate-rsync.sh" ssh-rsa SshKeyOfRootOntheLocalMachine
+        command="/home/rsnap/validate-rsync.sh" ssh-rsa SshKeyOfRootOntheLocalMachine
 
 * Put this in `~/validate-rsync.sh`:
 
